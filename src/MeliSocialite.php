@@ -3,6 +3,7 @@
 namespace Kolovious\MeliSocialite;
 
 use Laravel\Socialite\Two\AbstractProvider;
+use Laravel\Socialite\Two\InvalidStateException;
 use Laravel\Socialite\Two\ProviderInterface;
 use Laravel\Socialite\Two\User;
 use GuzzleHttp\ClientInterface;
@@ -10,15 +11,15 @@ use GuzzleHttp\ClientInterface;
 class MeliSocialite extends AbstractProvider implements ProviderInterface
 {
     /**
-     * @var Refresh Token
+     * @var string Refresh Token
      */
     protected $refresh_token;
     /**
-     * @var Access Token Expires in
+     * @var string Access Token Expires in
      */
     protected $expires_in;
     /**
-     * @var With Access Token, Refresh Token and Expires In.
+     * @var string With Access Token, Refresh Token and Expires In.
      */
     protected $parsed_response;
 
